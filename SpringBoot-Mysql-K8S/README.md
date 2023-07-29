@@ -30,6 +30,8 @@ ENTRYPOINT ["java", "-jar", "app.jar"]
 
 
 ### Bước 4: Apply các file deployment/service
+
+(Lưu ý: Vì services mysql expose cổng 3306local. Do đó cần kill mysql ở máy local bằng lệnh sau : `net stop MySQL8` )
 - Run file deploy.sh
 ```shell
 cd k8s
@@ -49,11 +51,11 @@ kubectl apply -f app-service.yml
 
 ### Bước 5 : Expose services: 
 - `minikube service springboot-backend`
-- `minikube service myqldb`
+- `minikube service mysqldb`
 - Kết quả: 
     + ![2.jpg](imgs/2.jpg)
     + ![3.jpg](imgs/3.jpg)
     + ![4.jpg](imgs/4.jpg)
     + ![5.jpg](imgs/5.jpg)
 
------ Xong
+### Bước 6: Add volumes để lưu data mysql
