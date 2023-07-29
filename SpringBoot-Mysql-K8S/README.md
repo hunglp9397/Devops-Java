@@ -58,4 +58,26 @@ kubectl apply -f app-service.yml
     + ![4.jpg](imgs/4.jpg)
     + ![5.jpg](imgs/5.jpg)
 
-### Bước 6: Add volumes để lưu data mysql
+### Bước 6: Dùng Persistent Volume Claim để lưu data mysql
+- Tạo file mysql-pv.yaml, mysql-pvc.yml
+- Sửa lại file deploy.sh như sau :
+  + ```shell
+  cd k8s
+  kubectl apply -f mysql-pvc.yml
+  sleep 2
+  kubectl apply -f mysql-pv.yml
+  sleep 2
+  kubectl apply -f mysql-deploy.yml
+  sleep 2
+  kubectl apply -f mysql-service.yml
+  sleep 2
+  kubectl apply -f app-deploy.yml
+  sleep 2
+  kubectl apply -f app-service.yml
+  ```
+- => Tổng kết : Khi một pods bị xóa, thì dl trong DB ko bị mát
+   + ![6.jpg](imgs/6.jpg)
+   + ![6.jpg](imgs/7.jpg)
+
+
+====== Xong
