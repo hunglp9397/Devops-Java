@@ -61,7 +61,7 @@ kubectl apply -f app-service.yml
 ### Bước 6: Dùng Persistent Volume Claim để lưu data mysql
 - Tạo file mysql-pv.yaml, mysql-pvc.yml
 - Sửa lại file deploy.sh như sau :
-  + ```shell
+  ```shell
   cd k8s
   kubectl apply -f mysql-pvc.yml
   sleep 2
