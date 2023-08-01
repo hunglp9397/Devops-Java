@@ -1,5 +1,9 @@
 cd k8s
 
+#kubectl delete -f mysql-pv.yml
+#sleep 2
+#kubectl delete -f mysql-pvc.yml
+#sleep 2
 kubectl delete -f mysql-deploy.yml
 sleep 2
 kubectl delete -f mysql-service.yml
