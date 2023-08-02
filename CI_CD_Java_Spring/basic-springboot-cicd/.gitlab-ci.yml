@@ -1,0 +1,34 @@
+image: gitlab/dind # Sử dụng môi trường gitlab
+services:
+  - docker: dind # Sử dugnj docker để run các thành phần bên dươ
+
+variables:
+  IMAGE_NAME: 123497/basic-springboot-cicd
+
+stages:  # Định nghi các bước, ở đây c 3 bước build/test/docker
+  - build
+  - test
+  - docker
+
+maven-build:  # Đây Chính là bước build file .jar
+  image: maven:3.8.5-openjdk-11
+  stage: build
+  script: "./mvn clean package"
+  artifacts:
+    paths:
+      - target/*.jar
+
+maven-test: # Run unit test của project
+  image: maven:3.8.5-openjdk-11
+  stage: test
+  script: "mvn test"
+  artifacts:
+    paths:
+      - target/*.jar
+
+docker-build: # Bước ny build image từ Dockerfile và push lên dockerhub
+  stage: docker
+  script:
+    - docker login -u $USERNAME_DOCKER -p $PASSWORD_DOCKER
+    - docker build -t $IMAGE_NAME:1.0 .
+    - docker push $IMAGE_NAME: 1.0
