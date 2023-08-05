@@ -1,3 +1,3 @@
-- Project Examle about Deploy Java/SpringProject using Docker/K8S
-- Each project will have README.md 
+#  Deploy Java/Spring Project sử dụng Docker/Kubernetes
+    (Mỗi project con sẽ có file README.md riêng của từng project)
 
