@@ -29,13 +29,13 @@
 ### 2. Đăng kí Gitlab Runner:
 - Lấy Registration Token ở đây: 
   + ![3.jpg](img_guide/3.jpg)
-- Đăng kí runner: `gitlab-runner.exe register`
+- Đăng kí runner: `docker exec -it gitlab-runner gitlab-runner register`
   + Nhập Gitlab instance URL: https://gitlab.com/
   + Nhập token vừa lấy được ở trên
   + Nhập giá trị "Enter an executor" là : _docker_
   + Nhập giá trị "Default images" là "_debian:latest_"
   + ![4.jpg](img_guide/4.jpg)
-  + ![5.jpg](img_guide/5.jpg)
+  + ![13.jpg](img_guide/13.jpg)
 - Active runner job:
   + ![6.jpg](img_guide/6.jpg)
   + ![7.jpg](img_guide/7.jpg)
