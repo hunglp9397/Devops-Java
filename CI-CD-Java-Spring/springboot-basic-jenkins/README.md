@@ -13,4 +13,4 @@
    - Vào Phần settings -> webhook, Nhập url `https://5293-1-55-219-115.ngrok-free.app/github-webhook/`
    - ![3.jpg](guide_img/3.jpg)
 ## 3. Tạo project trên Jenkins
-   - ![4.jpg](guide_img/4.jpg)
+   - ![4.jpg](guide_img/4.jpg)  
